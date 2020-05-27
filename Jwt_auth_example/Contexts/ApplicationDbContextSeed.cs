@@ -28,6 +28,8 @@ namespace Jwt_auth_example.Contexts
                 await userManager.CreateAsync(defaultUser, Authorization.default_password);
                 await userManager.AddToRoleAsync(defaultUser, Authorization.default_role.ToString());
             }
+
+            Console.WriteLine(userManager.Users);
         }
     }
 }
