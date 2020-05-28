@@ -18,7 +18,14 @@ namespace Jwt_auth_example.Controllers
         [HttpGet]
         public async Task<IActionResult> GetSecuredData()
         {
-            return Ok("This Secured Data is available pnly for Authenticated users.");
+            return Ok("This Secured Data is available only for Authenticated users.");
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> PostSecuredData()
+        {
+            return Ok("This Secured Data is available only for Authenticated users.");
         }
 
     }

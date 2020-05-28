@@ -9,5 +9,7 @@ namespace Jwt_auth_example.Services
     public interface IUserService
     {
         Task<string> RegisterAsync(RegisterModels model);
+        Task<AuthenticationModel> GetTokenAsync(TokenRequestModel model);
+        Task<string> AddRoleAsync(AddRoleModel model);
     }
 }
